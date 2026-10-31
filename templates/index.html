@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Press for a Smile ❤️</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="hearts" id="hearts"></div>
+
+    <main class="container">
+
+        <div class="emoji">💗</div>
+
+        <h1>Hey, Beautiful!</h1>
+
+        <p class="subtitle">
+            Having a bad day? Or just need a little happiness?
+        </p>
+
+        <p class="description">
+            I made this little corner of the internet just for you.
+            Click the button and let me make you smile.
+        </p>
+
+        <div class="message-box" id="messageBox">
+            Your surprise is waiting here... 💌
+        </div>
+
+        <button id="smileButton">
+            Press for a Smile ❤️
+        </button>
+
+        <button class="joke-button" id="jokeButton">
+            Tell me a lame joke 😂
+        </button>
+
+        <p class="footer">
+            Made with lots of love, just for you. ❤️
+        </p>
+        
+
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

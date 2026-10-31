@@ -1,0 +1,116 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ffe0ec, #fff1f5, #fce4ec);
+    overflow: hidden;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 450px;
+    padding: 40px 25px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(200, 100, 140, 0.15);
+    position: relative;
+    z-index: 2;
+}
+
+.emoji {
+    font-size: 55px;
+    margin-bottom: 15px;
+    animation: heartbeat 1.5s infinite;
+}
+
+h1 {
+    color: #d64f85;
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    color: #74465b;
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.description {
+    color: #8c7180;
+    line-height: 1.6;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.message-box {
+    min-height: 95px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff0f5;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 22px;
+    color: #c44c7d;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+button {
+    width: 100%;
+    border: none;
+    padding: 15px;
+    border-radius: 30px;
+    background: #e66b9a;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #d64f85;
+    transform: scale(1.03);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+.joke-button {
+    margin-top: 12px;
+    background: #a77ac7;
+}
+
+.joke-button:hover {
+    background: #8e60b2;
+}
+
+.footer {
+    margin-top: 25px;
+    font-size: 12px;
+    color: #b58a9e;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.15);
+    }
+}
