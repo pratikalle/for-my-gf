@@ -57,15 +57,18 @@ function moveNoButton() {
     const buttonWidth = noButton.offsetWidth;
     const buttonHeight = noButton.offsetHeight;
 
-    const maxX = window.innerWidth - buttonWidth - 20;
-    const maxY = window.innerHeight - buttonHeight - 20;
+    const padding = 15;
 
-    const randomX = Math.random() * maxX;
-    const randomY = Math.random() * maxY;
+    const maxX = window.innerWidth - buttonWidth - padding;
+    const maxY = window.innerHeight - buttonHeight - padding;
+
+    const randomX = Math.random() * (maxX - padding) + padding;
+    const randomY = Math.random() * (maxY - padding) + padding;
 
     noButton.style.position = "fixed";
-    noButton.style.left = `${Math.max(10, randomX)}px`;
-    noButton.style.top = `${Math.max(10, randomY)}px`;
+    noButton.style.width = `${buttonWidth}px`;
+    noButton.style.left = `${randomX}px`;
+    noButton.style.top = `${randomY}px`;
     noButton.style.zIndex = "9999";
 }
 
@@ -85,6 +88,53 @@ noButton.addEventListener("click", function (event) {
 });
 
 // YES button
+// yesButton.addEventListener("click", function () {
+//     loveResponse.innerHTML = "I knew it!! ❤️🥹 I love you more pandu🐼😘";
+// });
+
 yesButton.addEventListener("click", function () {
-    loveResponse.innerHTML = "I knew it!! ❤️🥹 I love you more! 😘";
+
+    const celebration = document.getElementById("celebration");
+
+    // Show celebration screen
+    celebration.classList.add("active");
+
+    // Falling decorations
+    const decorations = [
+        "❤️", "💖", "💕", "💗",
+        "🌹", "🌸", "✨", "💫",
+        "🎊", "💝", "🥰", "🐼"
+    ];
+
+    // Create falling elements
+    for (let i = 0; i < 100; i++) {
+
+        setTimeout(() => {
+
+            const item = document.createElement("div");
+
+            item.classList.add("falling-item");
+
+            item.innerHTML =
+                decorations[Math.floor(Math.random() * decorations.length)];
+
+            item.style.left = Math.random() * 100 + "vw";
+
+            item.style.fontSize =
+                Math.random() * 20 + 15 + "px";
+
+            item.style.animationDuration =
+                Math.random() * 3 + 3 + "s";
+
+            document.body.appendChild(item);
+
+            // Remove after animation
+            setTimeout(() => {
+                item.remove();
+            }, 6500);
+
+        }, i * 50);
+
+    }
+
 });

@@ -4,7 +4,7 @@ from messages import get_random_message, get_random_joke
 app = Flask(__name__)
 
 @app.route('/')
-def index():
+def home():
     return render_template('index.html')
 
 @app.route('/get-message')

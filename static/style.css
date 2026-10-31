@@ -162,3 +162,168 @@ button:active {
     margin-top: 20px;
     font-size: 18px;
 }
+
+/* Love question section */
+.love-question {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.love-question h2 {
+    color: #ff4f81;
+    margin-bottom: 20px;
+}
+
+.love-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    min-height: 55px;
+}
+
+/* YES button */
+.yes-button {
+    background: #ff4f81;
+    color: white;
+    width: 190px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* NO button */
+.no-button {
+    background: #777;
+    color: white;
+
+    /* IMPORTANT: Prevent full-width button */
+    width: auto !important;
+    min-width: 110px;
+    max-width: 130px;
+
+    padding: 12px 20px;
+    border: none;
+    border-radius: 30px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    position: relative;
+    flex: 0 0 auto;
+    white-space: nowrap;
+    box-sizing: border-box;
+
+    transition: none !important;
+    touch-action: none;
+    user-select: none;
+}
+
+#loveResponse {
+    color: #ff4f81;
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+/* Celebration overlay */
+.celebration {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 230, 240, 0.96);
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.celebration.active {
+    display: flex;
+}
+
+.celebration-content {
+    position: relative;
+    z-index: 10002;
+    padding: 30px;
+    animation: popIn 0.8s ease;
+}
+
+.big-heart {
+    font-size: 90px;
+    animation: heartbeat 1s infinite;
+}
+
+.celebration-content h1 {
+    color: #ff4081;
+    font-size: 36px;
+    margin: 15px 0;
+}
+
+.celebration-content h2 {
+    color: #d63384;
+}
+
+.celebration-content p {
+    color: #9c4770;
+    font-size: 17px;
+}
+
+.celebration-emoji {
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+/* Falling decorations */
+.falling-item {
+    position: fixed;
+    top: -50px;
+    z-index: 10001;
+    pointer-events: none;
+    animation: fallDown linear forwards;
+}
+
+@keyframes fallDown {
+    0% {
+        transform: translateY(-50px) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+
+    70% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
