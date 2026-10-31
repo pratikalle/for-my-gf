@@ -46,3 +46,45 @@ jokeButton.addEventListener("click", async function () {
     }
 
 });
+
+const noButton = document.getElementById("noButton");
+const yesButton = document.getElementById("yesButton");
+const loveResponse = document.getElementById("loveResponse");
+
+// Make NO button run away
+function moveNoButton() {
+
+    const buttonWidth = noButton.offsetWidth;
+    const buttonHeight = noButton.offsetHeight;
+
+    const maxX = window.innerWidth - buttonWidth - 20;
+    const maxY = window.innerHeight - buttonHeight - 20;
+
+    const randomX = Math.random() * maxX;
+    const randomY = Math.random() * maxY;
+
+    noButton.style.position = "fixed";
+    noButton.style.left = `${Math.max(10, randomX)}px`;
+    noButton.style.top = `${Math.max(10, randomY)}px`;
+    noButton.style.zIndex = "9999";
+}
+
+// Desktop: Run away when mouse approaches
+noButton.addEventListener("mouseenter", moveNoButton);
+
+// Mobile: Run away when touched
+noButton.addEventListener("touchstart", function (event) {
+    event.preventDefault();
+    moveNoButton();
+}, { passive: false });
+
+// Also prevent clicking NO
+noButton.addEventListener("click", function (event) {
+    event.preventDefault();
+    moveNoButton();
+});
+
+// YES button
+yesButton.addEventListener("click", function () {
+    loveResponse.innerHTML = "I knew it!! ❤️🥹 I love you more! 😘";
+});

@@ -114,3 +114,51 @@ button:active {
         transform: scale(1.15);
     }
 }
+.love-question {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.love-question h2 {
+    color: #ff4f81;
+    margin-bottom: 20px;
+}
+
+.love-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    min-height: 60px;
+}
+
+.yes-button,
+.no-button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.yes-button {
+    background: #ff4f81;
+    color: white;
+}
+
+.no-button {
+    background: #777;
+    color: white;
+    position: relative;
+    touch-action: none;
+    user-select: none;
+}
+
+#loveResponse {
+    color: #ff4f81;
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 18px;
+}
